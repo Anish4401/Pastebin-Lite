@@ -176,7 +176,7 @@ Response:
 ```json
 {
   "id": "abc123",
-  "url": "/p/abc123"
+  "url": "https://your-app.vercel.app/p/abc123"
 }
 ```
 

@@ -35,11 +35,13 @@ export async function POST(req: Request) {
     max_views: maxViews ?? null,
     views_used: 0,
   };
+  const url = new URL(req.url);
+  const baseUrl = `${url.protocol}//${url.host}`;
 
   await redis.set(`paste:${id}`, paste);
   return NextResponse.json({
     id,
-    url: `/p/${id}`,
+    url: `${baseUrl}/p/${id}`,
   });
   
 }

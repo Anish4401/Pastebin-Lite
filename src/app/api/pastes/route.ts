@@ -37,11 +37,6 @@ export async function POST(req: Request) {
   };
 
   await redis.set(`paste:${id}`, paste);
-
-  // return NextResponse.json({
-  //   id,
-  //   url: `${process.env.NEXT_PUBLIC_BASE_URL}/p/${id}`,
-  // });
   return NextResponse.json({
     id,
     url: `/p/${id}`,

@@ -19,11 +19,7 @@ export async function GET(
     );
   }
 
-  const now = await getNow();  // ← ADD AWAIT HERE!
-
-  console.log("Current time (now):", now);
-  console.log("Expires at:", paste.expires_at);
-  console.log("Is expired?", now >= paste.expires_at);
+  const now = await getNow();  
 
   if (paste.expires_at && now >= paste.expires_at) {
     return NextResponse.json(

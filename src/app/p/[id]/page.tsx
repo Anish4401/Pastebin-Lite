@@ -1,4 +1,3 @@
-// src/app/p/[id]/page.tsx
 import { headers } from "next/headers";
 
 async function getPaste(id: string) {
